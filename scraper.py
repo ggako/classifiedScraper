@@ -81,20 +81,10 @@ while nextButtonExists == True:
 # Check if variables have same lengths (implies complete expected data)
 if len(name) == len(state) == len(college) == len(course) == len(year) == len(profileLink) == len(pageTitle) == len(pageLink):
     # Making CSV
-    df_profiles = pd.DataFrame({'name': name, 'state' : state, 'college': college, 'course': course, 'year': year, 'profile': profileLink, 'page': pageTitle, 'page link': pageLink})
+    df_profiles = pd.DataFrame({'Name': name, 'State' : state, 'College': college, 'Course': course, 'Year': year, 'Profile': profileLink, 'Page': pageTitle, 'Page Link': pageLink})
     df_profiles.to_csv('profiles.csv', index=False)
     print("Successfully created csv file")
 else:
     raise Exception("Missing data")
 
 driver.quit()
-
-# Print statements for output checking:
-# print(name)
-# print(state)
-# print(college)
-# print(course)
-# print(year)
-# print(profileLink)
-# print(pageTitle)
-# print(pageLink)
