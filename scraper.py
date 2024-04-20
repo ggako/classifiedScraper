@@ -19,7 +19,7 @@ profileLink = []
 pageTitle = []
 pageLink = []
 
-# Page state checking variables
+# Initialize page state checking variables
 nextButtonExists = False
 initialPage = True
 
@@ -29,9 +29,9 @@ navButtons = driver.find_elements(by='xpath', value='//button[contains(@class, "
 if len(navButtons[-1].text) == 0: # Only check the rightmost button
     nextButtonExists = True
 
-# Checks if next button exists, if it exists - read the current page
+# Checks if next button exists, if it exists - will execute while loop to read the current page
 while nextButtonExists == True:
-
+ 
     if initialPage == False:
         # Go to next page
         navButtons[-1].click()
