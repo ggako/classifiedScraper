@@ -1,7 +1,6 @@
 # classifiedScraper
 
-Scrapes data from an alumni classifieds page and generates a readable csv file as output.
+**Description**: This program scrapes data from an alumni classifieds page and generates a readable csv file as output. \
+\
 
-How to use: 
-Make sure required libraries are installed (selenium and pandas)
-Run script inside terminal (Note: Scraper may take up to 10 seconds to load per page)
+*Working as of 4/28/24 version of the page*
