@@ -70,14 +70,22 @@ def main():
             
             # Getting name, state
             name.append(profile.find_element(by='xpath', value='.//h2[contains(@class,"text-xl")]').text)
-            state.append(profile.find_element(by='xpath', value='.//h2[contains(@class,"uppercase")]').text)
+            try:
+                state.append(profile.find_element(by='xpath', value='.//h2[contains(@class,"uppercase")]').text)
+            except:
+                state.append("")
 
             # Getting college, course, year
             subprofile = profile.find_elements(by='xpath', value='.//div[contains(@class,"my-[16px]")]') # List with 1 item
             subprofileElements = subprofile[0].text.split("\n")
-            college.append(subprofileElements[0])
-            course.append(subprofileElements[1])
-            year.append(subprofileElements[2])
+            if len(subprofileElements) == 3:
+                college.append(subprofileElements[0])
+                course.append(subprofileElements[1])
+                year.append(subprofileElements[2])
+            else:
+                college.append("")
+                course.append("")
+                year.append("")
 
             # Getting links to profile
             linkElement = profile.find_elements(by='xpath', value='.//a[contains(@class,"text-primary")]') # List with 1 item
